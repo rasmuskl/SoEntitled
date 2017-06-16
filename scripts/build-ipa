@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+END='\033[0m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+LIGHT_PURPLE='\033[0;35m'
+
+info() {
+ echo -e "$YELLOW[INFO]: $1 $END"
+}
+
+error() {
+ echo -e "$RED[ERROR]: $1 $END"
+}
+
+usage() {
+  echo -e "${YELLOW}Usage: $0 <codesign-id> <team-id>$END"
+}
+
+success() {
+  echo -e "$GREEN[SUCCESS]: $1 $END"
+}
+
+cmd() {
+  echo -e "${LIGHT_PURPLE}[EXEC]: $1$END"
+  eval $1
+}
+
+if [ $# -ne 1 ]; then
+  usage $0
+  info "Get a codesign ID by running: 'security find-identity -v -p codesigning'"
+  info "Or use \"Karl Krukow (YTTN6Y2QS9)\" if you have the Krukow cert installed."
+  exit 2
+fi
+
+export CODE_SIGN_IDENTITY=$1
+CONFIGURATION=${CONFIGURATION:=Debug}
+APP_PATH=SoEntitled
+ARCHIVE_DIR=archives
+IPA_DIR=${IPA_DIR:=ipa}
+SCHEME=${SCHEME:=SoEntitled}
+PROJECT=SoEntitled
+
+info "Building application ${PROJECT} as ${CODE_SIGN_IDENTITY}"
+
+cd ${APP_PATH}
+
+info "Using export plist:"
+cmd "xcodebuild -alltargets -configuration ${CONFIGURATION} -scheme ${SCHEME} -archivePath ${ARCHIVE_DIR}/${PROJECT}.xcarchive archive"
+cmd "xcodebuild -exportArchive -exportOptionsPlist exportOptions.plist -archivePath ${ARCHIVE_DIR}/${PROJECT}.xcarchive -exportPath ${IPA_DIR}"
+
+if [ "$?" -ne "0" ]; then
+  error "Failed to build"
+  exit 3
+fi
+
+success "Huzzah; Built to ${APP_PATH}/${IPA_DIR}/${PROJECT}.ipa"
+

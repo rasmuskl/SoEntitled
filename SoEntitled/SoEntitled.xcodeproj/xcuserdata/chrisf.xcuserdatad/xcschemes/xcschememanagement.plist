@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>HejWerden.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>KeysToTheFerrari.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>SharingIsCaring.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>SoEntitled.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>WatchIt (Notification).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>WatchIt.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>894C64F11EEF3DE300C019A1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>89645F2D1ED47AF3001ECF1A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>89645F401ED47B7D001ECF1A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>898B9C0B1EF03E550048035C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>89FD2A171ED452E4004844AE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>89FD2A2D1ED452E4004844AE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
